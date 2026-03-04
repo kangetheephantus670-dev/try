@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try - Customer Report System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">TRY System</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="#report-section">Submit Report</a></li>
+        <li><a href="/admin">Admin Login</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <h1>Customer Report System</h1>
+      <p>Submit your reports and get quick responses from our team</p>
+    </section>
+
+    <section id="report-section" class="report-form-section">
+      <div class="form-container">
+        <h2>Submit Your Report</h2>
+        
+        <form id="reportForm">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="customer_name" required placeholder="Your name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1234567890">
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category *</label>
+            <select id="category" name="category" required>
+              <option value="">Select a category</option>
+              <option value="bug">Bug Report</option>
+              <option value="feature">Feature Request</option>
+              <option value="general">General Inquiry</option>
+              <option value="complaint">Complaint</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="title">Report Title *</label>
+            <input type="text" id="title" name="title" required placeholder="Brief title of your report">
+          </div>
+
+          <div class="form-group">
+            <label for="description">Detailed Description *</label>
+            <textarea id="description" name="description" required placeholder="Please describe your report in detail..." rows="6"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit Report</button>
+          <div id="formMessage" class="message"></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="recent-reports">
+      <h2>Recent Reports (Public View)</h2>
+      <div id="reportsContainer" class="reports-grid">
+        <p>Loading reports...</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2026 Try System. All rights reserved. | <a href="/admin">Admin Panel</a></p>
+    </footer>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

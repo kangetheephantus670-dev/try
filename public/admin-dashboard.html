@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Try System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="admin-container">
+    <nav class="admin-navbar">
+      <div class="logo">TRY Admin Panel</div>
+      <div class="nav-right">
+        <span id="adminEmail" class="admin-email"></span>
+        <button id="logoutBtn" class="btn-logout">Logout</button>
+      </div>
+    </nav>
+
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <ul class="sidebar-menu">
+          <li><a href="#" class="menu-item active" data-section="dashboard">Dashboard</a></li>
+          <li><a href="#" class="menu-item" data-section="reports">All Reports</a></li>
+          <li><a href="#" class="menu-item" data-section="analytics">Analytics</a></li>
+          <li><a href="#" class="menu-item" data-section="settings">Settings</a></li>
+        </ul>
+      </aside>
+
+      <main class="admin-main">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+          <h2>Dashboard Overview</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h3>Total Reports</h3>
+              <p id="totalReports" class="stat-number">0</p>
+            </div>
+            <div class="stat-card">
+              <h3>Pending</h3>
+              <p id="pendingReports" class="stat-number">0</p>
+            </div>
+            <div class="stat-card">
+              <h3>Reviewing</h3>
+              <p id="reviewingReports" class="stat-number">0</p>
+            </div>
+            <div class="stat-card">
+              <h3>Resolved</h3>
+              <p id="resolvedReports" class="stat-number">0</p>
+            </div>
+          </div>
+
+          <div class="recent-activity">
+            <h3>Recent Activity</h3>
+            <div id="recentActivityContainer" class="activity-list">
+              <p>Loading activity...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section id="reports" class="section">
+          <h2>All Reports</h2>
+          <div class="reports-filter">
+            <select id="statusFilter">
+              <option value="">All Status</option>
+              <option value="pending">Pending</option>
+              <option value="reviewing">Reviewing</option>
+              <option value="resolved">Resolved</option>
+              <option value="closed">Closed</option>
+            </select>
+          </div>
+          <div id="reportsList" class="reports-table-container">
+            <p>Loading reports...</p>
+          </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="analytics" class="section">
+          <h2>Analytics & Reports</h2>
+          <div class="analytics-content">
+            <p>Detailed analytics coming soon...</p>
+          </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settings" class="section">
+          <h2>Settings</h2>
+          <div class="settings-content">
+            <p>Admin settings coming soon...</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Modal for viewing/editing report -->
+    <div id="reportModal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2>Report Details</h2>
+        <div id="modalBody" class="modal-body">
+          <!-- Report details will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/admin-dashboard.js"></script>
+</body>
+</html>
